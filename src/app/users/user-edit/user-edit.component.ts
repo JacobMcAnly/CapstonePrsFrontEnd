@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'user-edit',
@@ -6,5 +7,6 @@ import { Component } from "@angular/core";
     styleUrls: ['./user-edit.component.html']
 })
 export class UserEditComponent {
-    pageTitle: string = "User Edit";
+    pageTitle: string = "User Edit"
+    users: User[] = []
 }

@@ -3,4 +3,49 @@
     <menu></menu>
 </header>
 
+<body>
+  <div>
+      <h2>User Information</h2>
+      <ng-container *ngIf="users">
+        <form>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" class="form-control" [(ngModel)]="users.firstname" name="firstName" disabled>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="form-control" [(ngModel)]="users.lastname" name="lastName" disabled>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="users.phone" name="phoneNumber" disabled>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="users.email" name="email" disabled>
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" [(ngModel)]="users.username" name="username" disabled>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" [(ngModel)]="users.password" name="password" disabled>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="isAdmin" class="form-check-input" [(ngModel)]="users.isAdmin" name="isAdmin" disabled>
+            <label class="form-check-label" for="isAdmin">Is Admin</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="isReviewer" class="form-check-input" [(ngModel)]="users.isReviewer" name="isReviewer" disabled>
+            <label class="form-check-label" for="isReviewer">Is Reviewer</label>
+          </div>
+        </form>
+      </ng-container>
+    </div>
+
+    <button routerLink="/user/edit/{{ users.id }}">Edit</button>
+    <button>Delete</button>
+</body>
+
 <footer></footer>

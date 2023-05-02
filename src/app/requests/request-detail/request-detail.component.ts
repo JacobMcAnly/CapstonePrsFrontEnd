@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { LineItem } from "src/model/line-item.class";
 
 @Component({
     selector: 'request-detail',
@@ -6,5 +8,7 @@ import { Component } from "@angular/core";
     styleUrls: ['./request-detail.component.html']
 })
 export class RequestDetailComponent {
-    pageTitle: string = "Request Detail";
+    pageTitle: string = "Request Detail"
+    requests: Request[] = [];
+    lineItems: LineItem[] = [];
 }

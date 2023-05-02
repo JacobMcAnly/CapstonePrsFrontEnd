@@ -3,4 +3,76 @@
     <menu></menu>
 </header>
 
+<div>
+    <h2>Request Information</h2>
+    <form>
+        <div class="form-group">
+            <label for="submittedDate">Submitted Date</label>
+            <input type="date" id="submittedDate">
+        </div>
+        <div class="form-group">
+            <label for="dateNeeded">Date Needed</label>
+            <input type="date" id="dateNeeded">
+        </div>
+        <div for="form-group">
+            <label for="user">User</label>
+            <input type="text" id="user">
+        </div>
+        <div for="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description">
+        </div>
+        <div for="form-group">
+            <label for="justification">Justification</label>
+            <input type="text" id="justification">
+        </div>
+        <div class="form-group">
+            <label for="deliveryMode">Delivery Mode</label>
+            <select id="deliveryMode">
+                <option value="">Select a delivery mode</option>
+                <option value="nextDayAir">Next-day Air</option>
+                <option value="ground">Ground</option>
+                <option value="camelBack">Camel Back</option>
+            </select>
+        </div>
+        <div for="form-group">
+            <label for="status">Status</label>
+            <input type="text" id="status">
+        </div>
+        <div for="form-group">
+            <label for="rejectionReason">Rejection Reason</label>
+            <input type="text" id="rejectionReason">
+        </div>
+
+        <div>
+            <p>List of line items:</p>
+            <table>
+                <thead>
+                    <tr>
+                      <th>Part Number</th>
+                      <th>Product Description</th>
+                      <th>Vendor</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- <tr *ngFor="let lineItem of lineItems">
+                      <td>{{ lineItem.partNumber }}</td>
+                      <td>{{ lineItem.productDescription }}</td>
+                      <td>{{ lineItem.vendor }}</td>
+                      <td>{{ lineItem.price }}</td>
+                      <td>{{ lineItem.quantity }}</td>
+                      <td>{{ lineItem.total }}</td>
+                    </tr> -->
+                  </tbody>
+            </table>
+          </div>
+
+    </form>
+</div>
+
+<button>Save</button>
+
 <footer></footer>

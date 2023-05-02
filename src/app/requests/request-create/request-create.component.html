@@ -2,5 +2,37 @@
 <header>
     <menu></menu>
 </header>
+
+<body>
+    <div>
+        <h2>New Request</h2>
+        <form>
+            <div class="from-group">
+                <label for="dateNeeded">Date Needed</label>
+                <input type="date" id="dateNeeded">
+            </div>
+            <div class="from-group">
+                <label for="description">Description</label>
+                <input type="text" id="description">
+            </div>
+            <div class="from-group">
+                <label for="justification">Justification</label>
+                <input type="text" id="justification">
+            </div>
+            <div class="form-group">
+                <label for="deliveryMode">Delivery Mode</label>
+                <select id="deliveryMode">
+                    <option value="">Select a delivery mode</option>
+                    <option value="nextDayAir">Next-day Air</option>
+                    <option value="ground">Ground</option>
+                    <option value="camelBack">Camel Back</option>
+                    <!-- Add more options for additional vendors -->
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+
+<button>Save</button>
     
 <footer></footer>

@@ -3,4 +3,36 @@
     <menu></menu>
 </header>
 
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ pageTitle }}</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">Justification</th>
+                    <th scope="col">Submitted Date</th>
+                    <th scope="col">Date Needed</th>
+                    <th scope="col">Delivery Mode</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let review of reviews">
+                    <td scope="row">{{ review.description }}</td>
+                    <td scope="row">{{ review.justification }}</td>
+                    <td scope="row">{{ review.submittedDate }}</td>
+                    <td scope="row">{{ review.dateNeeded }}</td>
+                    <td scope="row">{{ review.deliveryMode }}</td>
+                    <td scope="row">{{ review.status }}</td>
+                    <td scope="row">{{ review.total }}</td>
+                    <td scope="row">{{ review.review }}</td> <!-- ICON -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <footer></footer>

@@ -1,7 +1,12 @@
+<header>
+    <menu></menu>
+</header>
+
 <div class="card">
     <div class="card-body">     
                             <!-- one way binding-->
         <h5 class="card-title">{{ pageTitle }}</h5>
+        <button routerLink="/product/create">Create</button>
         <table class="table">
             <thead>
                 <tr>
@@ -9,8 +14,10 @@
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Unit</th>
-                    <th scope="col">Photo Path</th>
+                    <th scope="col">Photo</th>
                     <th scope="col">Vendor</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,10 +27,24 @@
                     <td scope="row">{{ product.name }}</td>
                     <td scope="row">{{ product.price }}</td>
                     <td scope="row">{{ product.unit }}</td>
-                    <td scope="row">{{ product.photoPath }}</td>
+                    <td scope="row">
+                        <img src="{{ product.photoPath }}" alt="Product Photo" height="100">
+                    </td>
                     <td scope="row">{{ product.vendor.name }}</td>
+                    <td> 
+                        <a routerLink="/product/detail/{{ product.id }}">
+                            <img class="icon" src="../../../assets/info.png">
+                        </a>
+                    </td>
+                    <td> 
+                        <a routerLink="/product/edit/{{ product.id }}">
+                            <img class="icon" src="../../../assets/edit.png">
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+<footer></footer>

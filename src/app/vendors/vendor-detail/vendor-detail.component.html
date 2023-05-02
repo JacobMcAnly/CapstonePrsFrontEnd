@@ -1,6 +1,51 @@
-<p>{{pageTitle}} works!</p>
 <header>
     <menu></menu>
 </header>
+
+<body>
+<div>
+    <h2>Vendor Information</h2>
+    <ng-container *ngIf="vendors">
+      <form>
+        <div class="form-group">
+          <label for="code">Code</label>
+          <input type="text" id="code" class="form-control" [(ngModel)]="vendors.code" name="code" disabled> <!-- Property 'code' does not exist on type 'Vendor[]'.ngtsc(2339)
+            vendor-detail.component.ts(10, 20): Error occurs in the template of component VendorDetailComponent. -->
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="vendors.name" name="name" disabled>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" class="form-control" [(ngModel)]="vendors.address" name="address" disabled>
+          </div>
+        <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" class="form-control" [(ngModel)]="vendors.city" name="city" disabled>
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" class="form-control" [(ngModel)]="vendors.state" name="state" disabled>
+        </div>
+        <div class="form-group">
+            <label for="zip">Zip</label>
+            <input type="text" id="zip" class="form-control" [(ngModel)]="vendors.zip" name="zip" disabled>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="vendors.phone" name="phoneNumber" disabled>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" [(ngModel)]="vendors.email" name="email" disabled>
+        </div>
+      </form>
+    </ng-container>
+  </div>
+
+  <button routerLink="/vendor/edit/{{ vendors.id }}">Edit</button>
+  <button>Delete</button>
+  </body>
 
 <footer></footer>

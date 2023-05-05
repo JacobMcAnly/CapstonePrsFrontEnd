@@ -13,20 +13,14 @@ export class UserCreateComponent implements OnInit {
 
     constructor (private userService: UserService) {}
 
-    ngOnInit() {
-    this.userService.save(this.users).subscribe(
-        jsonResponse => {
-            this.users = jsonResponse as User;
-        }
-    );
-    }
+    ngOnInit() { }
 
-    // saveUser() {
-    //     this.userService.save(this.users).subscribe(
-    //         jsonResponse => {
-    //             this.users = jsonResponse as User;
-    //         }
-    //     );
-    // }
+    saveUser() {
+        this.userService.save(this.users).subscribe(
+            jsonResponse => {
+                this.users = jsonResponse as User;
+            }
+        );
+    }
 
 }

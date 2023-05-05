@@ -3,75 +3,37 @@
 </header>
 
 <body>
-  <div>
-      <h2>Request Information</h2>
-      <ng-container *ngIf="requests">
-        <form>
-          <div class="form-group">
-            <label for="submittedDate">SubmittedDate</label>
-            <input type="date" id="submittedDate" class="form-control" [(ngModel)]="requests[0].submittedDate" name="submittedDate" disabled>
-          </div>
-          <div class="form-group">
-              <label for="dateNeeded">Date Needed</label>
-              <input type="date" id="dateNeeded" class="form-control" [(ngModel)]="requests[0].dateNeeded" name="dateNeeded" disabled>
-            </div>
-          <div class="form-group">
-            <label for="user">User</label>
-            <input type="text" id="user" class="form-control" [(ngModel)]="requests[0].user.username" name="user" disabled>
-          </div>
-          <div class="form-group">
-          <label for="description">Description</label>
-          <input type="text" id="description" class="form-control" [(ngModel)]="requests[0].description" name="description" disabled>
-          </div>
-          <div class="form-group">
-              <label for="justification">Justification</label>
-              <input type="text" id="justification" class="form-control" [(ngModel)]="requests[0].justification" name="justification" disabled>
-          </div>
-          <div class="form-group">
-              <label for="deliveryMode">Delivery Mode</label>
-              <input type="text" id="deliveryMode" class="form-control" [(ngModel)]="requests[0].deliveryMode" name="deliveryMode" disabled>
-          </div>
-          <div class="form-group">
-              <label for="status">Status</label>
-              <input type="text" id="status" class="form-control" [(ngModel)]="requests[0].status" name="status" disabled>
-          </div>
-          <div>
-              <p>List of line items:</p>
-              <table>
-                  <thead>
-                      <tr>
-                        <th>Part Number</th>
-                        <th>Product Description</th>
-                        <th>Vendor</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <!-- <tr *ngFor="let lineItem of lineItems">
-                        <td>{{ lineItem.partNumber }}</td>
-                        <td>{{ lineItem.productDescription }}</td>
-                        <td>{{ lineItem.vendor }}</td>
-                        <td>{{ lineItem.price }}</td>
-                        <td>{{ lineItem.quantity }}</td>
-                        <td>{{ lineItem.total }}</td>
-                      </tr> -->
-                    </tbody>
-              </table>
-            </div>
-        </form>
-      </ng-container>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{pageTitle}}</h5>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Justification</th>
+                        <th scope="col">Submitted Date</th>
+                        <th scope="col">Date Needed</th>
+                        <th scope="col">Delivery Method</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let request of requests">
+                        <td scope="row">{{request.description}}</td>
+                        <td scope="row">{{request.justification}}</td>
+                        <td scope="row">{{request.submittedDate}}</td>
+                        <td scope="row">{{request.dateNeeded}}</td>
+                        <td scope="row">{{request.deliveryMode}}</td>
+                        <td scope="row">{{request.status}}</td>
+                        <td scope="row">{{request.total}}</td>
+                        <td><a routerLink="/review/detail/{{request.id}}"><img class="icon" src="../../../assets/review.png"/></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-  <!-- input box: Rejection Reason -->
-  <label for="rejection-reason">Rejection Reason:</label>
-  <input type="text" id="rejection-reason" name="rejection-reason">
-
-  <!-- approve button -->
-  <button>Approve</button>
-  <!-- reject button -->
-  <button>Reject</button>
 </body>
 
 <footer></footer>

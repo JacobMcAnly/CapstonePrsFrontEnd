@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Product } from "src/model/product.class";
+import { ProductService } from "src/app/services/product.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'product-detail',
@@ -8,26 +10,18 @@ import { Product } from "src/model/product.class";
 })
 export class ProductDetailComponent {
     pageTitle: string = "Product Detail"
-    products: Product[] = [];
-    
-        // {
-        //     "id": 12,
-        //     "partNbr": "AVC-0777",
-        //     "name": "End-of-line Flame Arrestor",
-        //     "price": 806.91,
-        //     "unit": "each",
-        //     "photoPath": "https://www.protectoseal.com/product/vapor-and-flame-solutions/flame-detonation-arresters/end-of-line-deflagration-flame-arresters/avc/",
-        //     "vendor": {
-        //         "id": 14,
-        //         "code": "PROSL-8899",
-        //         "name": "Protectoseal",
-        //         "address": "225 Foster Ave",
-        //         "city": "Bensenville",
-        //         "state": "IL",
-        //         "zip": "60106",
-        //         "phone": "6305950800",
-        //         "email": "help@protectoseal.com"
-        //     }
-        // } 
+    products!: Product;
+    id!: number;
+
+    constructor (
+        private productService: ProductService,
+        private route: ActivatedRoute) {}
+
+        ngOnInit() {
+            this.route.params.subscribe(parms => this.id = parms['id']);
+            this.productService.get(this.id).subscribe(
+                jsonResponse => { this.products = jsonResponse as Product}
+            );
+        }
     
 }

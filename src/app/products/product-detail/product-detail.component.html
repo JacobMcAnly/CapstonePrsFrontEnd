@@ -10,33 +10,33 @@
         <form>
           <div class="form-group">
             <label for="photoPath">Photo Path</label>
-            <input type="text" id="photoPath" class="form-control" [(ngModel)]="products[0].photoPath" name="photoPath" disabled>
+            <input type="text" id="photoPath" class="form-control" [(ngModel)]="products.photoPath" name="photoPath" disabled>
           </div>
           <div class="form-group">
               <label for="partNbr">Part Number</label>
-              <input type="text" id="partNbr" class="form-control" [(ngModel)]="products[0].partNbr" name="partNbr" disabled>
+              <input type="text" id="partNbr" class="form-control" [(ngModel)]="products.partNbr" name="partNbr" disabled>
             </div>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" [(ngModel)]="products[0].name" name="name" disabled>
+            <input type="text" id="name" class="form-control" [(ngModel)]="products.name" name="name" disabled>
           </div>
           <div class="form-group">
           <label for="vendor">Vendor</label>
-          <input type="text" id="vendor" class="form-control" [(ngModel)]="products[0].vendor.name" name="vendor" disabled>
+          <input type="text" id="vendor" class="form-control" [(ngModel)]="products.vendor.name" name="vendor" disabled>
           </div>
           <div class="form-group">
               <label for="unit">Unit</label>
-              <input type="text" id="unit" class="form-control" [(ngModel)]="products[0].unit" name="unit" disabled>
+              <input type="text" id="unit" class="form-control" [(ngModel)]="products.unit" name="unit" disabled>
           </div>
           <div class="form-group">
               <label for="price">Price</label>
-              <input type="text" id="price" class="form-control" [(ngModel)]="products[0].price" name="price" disabled>
+              <input type="text" id="price" class="form-control" [(ngModel)]="products.price" name="price" disabled>
           </div>
         </form>
       </ng-container>
     </div>
 
-    <button routerLink="/product/edit/{{ products[0].id }}">Edit</button>
+    <button routerLink="/product/edit/{{ products.id }}">Edit</button>
     <button>Delete</button>
 </body>
 

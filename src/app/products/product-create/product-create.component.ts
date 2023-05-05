@@ -13,7 +13,9 @@ export class ProductCreateComponent implements OnInit{
 
     constructor (private productService: ProductService) {}
 
-    ngOnInit() {
+    ngOnInit() { }
+
+    saveProduct() {
         this.productService.save(this.products).subscribe(
             jsonResponse => {
                 this.products = jsonResponse as Product;

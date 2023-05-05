@@ -1,4 +1,3 @@
-<p>{{pageTitle}} works!</p>
 <header>
     <menu></menu>
 </header>
@@ -7,70 +6,41 @@
     <h2>Request Information</h2>
     <form>
         <div class="form-group">
-            <label for="submittedDate">Submitted Date</label>
-            <input type="date" id="submittedDate">
+          <label for="submittedDate">SubmittedDate</label>
+          <input type="string" id="submittedDate" class="form-control" [(ngModel)]="requests.submittedDate" name="submittedDate">
         </div>
         <div class="form-group">
             <label for="dateNeeded">Date Needed</label>
-            <input type="date" id="dateNeeded">
+            <input type="date" id="dateNeeded" class="form-control" [(ngModel)]="requests.dateNeeded" name="dateNeeded">
+          </div>
+        <div class="form-group">
+          <label for="user">User</label>
+          <input type="text" id="user" class="form-control" [(ngModel)]="requests.user.username" name="user">
         </div>
-        <div for="form-group">
-            <label for="user">User</label>
-            <input type="text" id="user">
+        <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" class="form-control" [(ngModel)]="requests.description" name="description">
         </div>
-        <div for="form-group">
-            <label for="description">Description</label>
-            <input type="text" id="description">
-        </div>
-        <div for="form-group">
+        <div class="form-group">
             <label for="justification">Justification</label>
-            <input type="text" id="justification">
+            <input type="text" id="justification" class="form-control" [(ngModel)]="requests.justification" name="justification">
         </div>
         <div class="form-group">
             <label for="deliveryMode">Delivery Mode</label>
-            <select id="deliveryMode">
-                <option value="">Select a delivery mode</option>
-                <option value="nextDayAir">Next-day Air</option>
-                <option value="ground">Ground</option>
-                <option value="camelBack">Camel Back</option>
-            </select>
+            <input type="text" id="deliveryMode" class="form-control" [(ngModel)]="requests.deliveryMode" name="deliveryMode">
         </div>
-        <div for="form-group">
+        <div class="form-group">
             <label for="status">Status</label>
-            <input type="text" id="status">
+            <input type="text" id="status" class="form-control" [(ngModel)]="requests.status" name="status">
         </div>
-        <div for="form-group">
+        <div class="form-group">
             <label for="rejectionReason">Rejection Reason</label>
-            <input type="text" id="rejectionReason">
+            <input type="text" id="rejectionReason" class="form-control" [(ngModel)]="requests.rejectionReason" name="rejectionReason">
         </div>
-
         <div>
-            <p>List of line items:</p>
-            <table>
-                <thead>
-                    <tr>
-                      <th>Part Number</th>
-                      <th>Product Description</th>
-                      <th>Vendor</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- <tr *ngFor="let lineItem of lineItems">
-                      <td>{{ lineItem.partNumber }}</td>
-                      <td>{{ lineItem.productDescription }}</td>
-                      <td>{{ lineItem.vendor }}</td>
-                      <td>{{ lineItem.price }}</td>
-                      <td>{{ lineItem.quantity }}</td>
-                      <td>{{ lineItem.total }}</td>
-                    </tr> -->
-                  </tbody>
-            </table>
+           <app-line-item-list></app-line-item-list>
           </div>
-
-    </form>
+      </form>
 </div>
 
 <button>Save</button>

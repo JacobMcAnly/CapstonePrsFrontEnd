@@ -20,6 +20,10 @@ import { VendorCreateComponent } from './vendors/vendor-create/vendor-create.com
 import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
+import { LineItemEditComponent } from './line-items/line-item-edit/line-item-edit.component';
+import { LineItemDetailComponent } from './line-items/line-item-detail/line-item-detail.component';
+import { LineItemListComponent } from './line-items/line-item-list/line-item-list.component';
+
 
 
 
@@ -45,8 +49,12 @@ const routes: Routes = [
   {path: "vendor/detail/:id", component: VendorDetailComponent},
   {path: "vendor/edit/:id", component: VendorEditComponent},
   {path: "vendor/list", component: VendorListComponent},
+  {path: "line-item/edit/:id", component: LineItemEditComponent},
+  {path: "line-item/detail/:id", component: LineItemDetailComponent},
+  {path: "line-item/list", component: LineItemListComponent},
   {path: "home", component:HomeComponent},
-  {path: "**", component: HomeComponent} //If you mess up, this will send you home (not secure)
+  {path: "**", component: HomeComponent} //If you mess up, this will send you home (not secure),
+  
 ];
 
 @NgModule({

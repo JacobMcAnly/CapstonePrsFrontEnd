@@ -1,36 +1,29 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Request } from "src/model/request.class";
+import { RequestService } from "src/app/services/request.service";
+import { ActivatedRoute } from "@angular/router";
+import { User } from "src/model/user.class";
+import { UserService } from "src/app/services/user.service";
 import { LineItem } from "src/model/line-item.class";
 
 @Component({
-    selector: 'request-edit',
+    selector: 'app-request-edit',
     templateUrl: './request-edit.component.html',
-    styleUrls: ['./request-edit.component.html']
+    styleUrls: ['./request-edit.component.css']
 })
-export class RequestEditComponent {
-    pageTitle: string = "Request Edit"
-    requests: Request[] = [];
-    lineItems: LineItem[] = []
-    // {
-    //     "id": 14,
-    //     "description": "Need Product",
-    //     "justification": "Need to finish project",
-    //     "rejectionReason": "need it",
-    //     "deliveryMode": "air mail",
-    //     "submittedDate": "2023-03-11T00:00:00",
-    //     "dateNeeded": "2023-06-21",
-    //     "status": "Review",
-    //     "total": 3128.82,
-    //     "user": {
-    //         "id": 10,
-    //         "username": "JAMcAnly",
-    //         "password": "strongpassword",
-    //         "firstname": "Jacob",
-    //         "lastname": "McAnly",
-    //         "phone": "513-302-6026",
-    //         "email": "jacob.mcanly@gmail.com",
-    //         "isReviewer": true,
-    //         "isAdmin": true
-    //     }
-    // }
+
+export class RequestEditComponent implements OnInit {
+    pageTitle: string = "Request Edit";
+    requests!: Request;
+    lineItems: LineItem[] = [];
+    id: number = 0;
+
+    constructor(
+        private requestService: RequestService,
+        private route: ActivatedRoute) {}
+
+    ngOnInit() {
+        this.route.params.subscribe(p => this.id = p['id']);
+        this.requestService.getRequest(this.id).subscribe(j => this.requests = j as Request);
+    }
 }

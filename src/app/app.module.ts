@@ -24,6 +24,9 @@ import { VendorCreateComponent } from './vendors/vendor-create/vendor-create.com
 import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
+import { LineItemListComponent } from './line-items/line-item-list/line-item-list.component';
+import { LineItemEditComponent } from './line-items/line-item-edit/line-item-edit.component';
+import { LineItemDetailComponent } from './line-items/line-item-detail/line-item-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -53,7 +56,10 @@ app.module.ts(32, 5): Unknown reference. */
     RequestListComponent,
     RequestEditComponent,
     RequestDetailComponent,
-    RequestCreateComponent
+    RequestCreateComponent,
+    LineItemListComponent,
+    LineItemEditComponent,
+    LineItemDetailComponent
   ],
   imports: [
     BrowserModule,

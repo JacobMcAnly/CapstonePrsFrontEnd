@@ -13,11 +13,13 @@ export class RequestCreateComponent {
 
     constructor (private requestService: RequestService) {}
 
-    ngOnInit() {
+    ngOnInit() { }
+
+    saveCreate() {
         this.requestService.saveRequest(this.requests).subscribe(
             jsonResponse => {
                 this.requests = jsonResponse as Request;
             }
         );
-        }
+    }
 }

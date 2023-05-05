@@ -9,66 +9,44 @@
       <form>
         <div class="form-group">
           <label for="submittedDate">SubmittedDate</label>
-          <input type="date" id="submittedDate" class="form-control" [(ngModel)]="requests[0].submittedDate" name="submittedDate" disabled>
+          <input type="string" id="submittedDate" class="form-control" [(ngModel)]="requests.submittedDate" name="submittedDate" disabled>
         </div>
         <div class="form-group">
             <label for="dateNeeded">Date Needed</label>
-            <input type="date" id="dateNeeded" class="form-control" [(ngModel)]="requests[0].dateNeeded" name="dateNeeded" disabled>
+            <input type="date" id="dateNeeded" class="form-control" [(ngModel)]="requests.dateNeeded" name="dateNeeded" disabled>
           </div>
         <div class="form-group">
           <label for="user">User</label>
-          <input type="text" id="user" class="form-control" [(ngModel)]="requests[0].user.username" name="user" disabled>
+          <input type="text" id="user" class="form-control" [(ngModel)]="requests.user.username" name="user" disabled>
         </div>
         <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" id="description" class="form-control" [(ngModel)]="requests[0].description" name="description" disabled>
+        <input type="text" id="description" class="form-control" [(ngModel)]="requests.description" name="description" disabled>
         </div>
         <div class="form-group">
             <label for="justification">Justification</label>
-            <input type="text" id="justification" class="form-control" [(ngModel)]="requests[0].justification" name="justification" disabled>
+            <input type="text" id="justification" class="form-control" [(ngModel)]="requests.justification" name="justification" disabled>
         </div>
         <div class="form-group">
             <label for="deliveryMode">Delivery Mode</label>
-            <input type="text" id="deliveryMode" class="form-control" [(ngModel)]="requests[0].deliveryMode" name="deliveryMode" disabled>
+            <input type="text" id="deliveryMode" class="form-control" [(ngModel)]="requests.deliveryMode" name="deliveryMode" disabled>
         </div>
         <div class="form-group">
             <label for="status">Status</label>
-            <input type="text" id="status" class="form-control" [(ngModel)]="requests[0].status" name="status" disabled>
+            <input type="text" id="status" class="form-control" [(ngModel)]="requests.status" name="status" disabled>
         </div>
         <div class="form-group">
             <label for="rejectionReason">Rejection Reason</label>
-            <input type="text" id="rejectionReason" class="form-control" [(ngModel)]="requests[0].rejectionReason" name="rejectionReason" disabled>
+            <input type="text" id="rejectionReason" class="form-control" [(ngModel)]="requests.rejectionReason" name="rejectionReason" disabled>
         </div>
         <div>
-            <p>List of line items:</p>
-            <table>
-                <thead>
-                    <tr>
-                      <th>Part Number</th>
-                      <th>Product Description</th>
-                      <th>Vendor</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- <tr *ngFor="let lineItem of lineItems"> <!-- product? 
-                      <td>{{ lineItem.partNumber }}</td>
-                      <td>{{ lineItem.productDescription }}</td>
-                      <td>{{ lineItem.vendor }}</td>
-                      <td>{{ lineItem.price }}</td>
-                      <td>{{ lineItem.quantity }}</td>
-                      <td>{{ lineItem.total }}</td>
-                    </tr> -->
-                  </tbody>
-            </table>
+            <app-line-item-list> </app-line-item-list>
           </div>
       </form>
     </ng-container>
   </div>
 
-  <button routerLink="/request/edit/{{ requests[0].id }}">Edit</button>
+  <button routerLink="/request/edit/{{ requests.id }}">Edit</button>
   <button>Delete</button>
     
 <footer></footer>

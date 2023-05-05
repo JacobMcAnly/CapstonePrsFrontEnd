@@ -8,8 +8,8 @@ export class Request {
     justification: string; 
     rejectionReason: string; 
     deliveryMode: string; 
-    submittedDate: Date; 
-    dateNeeded: Date; 
+    submittedDate: string; 
+    dateNeeded: string; 
     status: string; 
     total: number; 
     user: User; 
@@ -21,8 +21,8 @@ export class Request {
         justification: string,
         rejectionReason: string, 
         deliveryMode: string = "Pickup", 
-        submittedDate: Date = new Date(), 
-        dateNeeded: Date, 
+        submittedDate: string, 
+        dateNeeded: string, 
         status: string = "New", 
         total: number = 0, 
         user: User 

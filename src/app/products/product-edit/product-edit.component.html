@@ -1,4 +1,3 @@
-<p>{{pageTitle}} works!</p>
 <header>
     <menu></menu>
 </header>
@@ -7,35 +6,34 @@
     <h2>Product Information</h2>
     <form>
         <div class="form-group">
-            <label for="photoPath">Photo Path</label>
-            <input type="text" id="photoPath">
+          <label for="photoPath">Photo Path</label>
+          <input type="text" id="photoPath" class="form-control" [(ngModel)]="products.photoPath" name="photoPath">
         </div>
         <div class="form-group">
             <label for="partNbr">Part Number</label>
-            <input type="text" id="partNbr">
+            <input type="text" id="partNbr" class="form-control" [(ngModel)]="products.partNbr" name="partNbr">
+          </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="products.name" name="name">
         </div>
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name">
-        </div>
-        <div class="form-group">
-        <label for="vendor">Vendor</label>
-        <select id="vendor">
-            <option value="">Select a vendor</option>
-            <option value="fike">Fike</option>
-            <option value="protectoseal">Protectoseal</option>
-            <!-- Add more options for additional vendors -->
-        </select>
+            <label for="vendor">Vendor</label>
+            <select>
+                <option *ngFor="let vendor of vendors">
+                    {{ vendor.name }}
+                </option>
+            </select>
         </div>
         <div class="form-group">
             <label for="unit">Unit</label>
-            <input type="text" id="unit">
+            <input type="text" id="unit" class="form-control" [(ngModel)]="products.unit" name="unit">
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="text" id="price">
+            <input type="text" id="price" class="form-control" [(ngModel)]="products.price" name="price">
         </div>
-    </form>
+      </form>
 </div>
 
 <button>Save</button>

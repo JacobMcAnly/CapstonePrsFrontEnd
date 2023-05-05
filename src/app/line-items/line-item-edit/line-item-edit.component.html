@@ -1,0 +1,35 @@
+<menu></menu>
+<table>
+    <tr>
+        <td><img src="{{lineItem.product.photoPath}}" alt=""></td>
+    </tr>
+    <tr>
+        <td>Part Number: </td>
+        <td>{{lineItem.product.partNumber}}</td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td>{{lineItem.product.name}}</td>
+    </tr>
+    <tr>
+        <td>Vendor: </td>
+        <td>{{lineItem.product.vendor.name}}</td>
+    </tr>
+    <tr>
+        <td>Unit: </td>
+        <td>{{lineItem.product.unit}}</td>
+    </tr>
+    <tr>
+        <td>Price: </td>
+        <td>{{lineItem.product.price}}</td>
+    </tr>
+    <tr>
+        <td>Quantity: </td>
+        <td><input type="text" [(ngModel)]="lineItem.quantity"></td>
+    </tr>
+</table>
+<br>
+<br>
+
+<button>Save</button>
+<footer></footer>

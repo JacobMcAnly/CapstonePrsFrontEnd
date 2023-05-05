@@ -13,20 +13,14 @@ export class VendorCreateComponent implements OnInit{
 
     constructor (private vendorService: VendorService) {}
 
-    ngOnInit() {
+    ngOnInit() { }
+
+    saveVendor() {
         this.vendorService.save(this.vendors).subscribe(
             jsonResponse => {
                 this.vendors = jsonResponse as Vendor;
             }
-        )
+        );
     }
-
-    // saveVendor() {
-    //     this.vendorService.save(this.vendors).subscribe(
-    //         jsonResponse => {
-    //             this.vendors = jsonResponse as Vendor;
-    //         }
-    //     );
-    // }
 
 }

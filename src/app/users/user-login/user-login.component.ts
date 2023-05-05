@@ -1,22 +1,31 @@
-import { Component, OnInit } from "@angular/core";
-import { User } from "src/model/user.class";
-import { UserService } from "src/app/services/user.service";
+import { Component } from '@angular/core';
+import { User } from 'src/model/user.class'; // import the User class
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-user-login',
-    templateUrl: './user-login.component.html',
-    styleUrls: ['./user-login.component.css']
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.css']
 })
+export class UserLoginComponent {
+  pageTitle = 'User Login';
+  username!: string; // initialize the username property
+  password!: string; // initialize the password property
 
-export class UserLoginComponent implements OnInit{
-    pageTitle: string = "User Login";
-    users!: User;
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
 
-    constructor(
-        private userService: UserService) {}
-
-    ngOnInit(): void {
-        
-    }
-
+  login(): void {
+    this.userService.login({ username: this.username, password: this.password }).subscribe(
+      (user: User) => {
+        this.router.navigate(['/home']); // navigate to home on successful login
+      },
+      (error: any) => {
+        console.log(error); // log any errors that occur during login
+      }
+    );
+  }
 }

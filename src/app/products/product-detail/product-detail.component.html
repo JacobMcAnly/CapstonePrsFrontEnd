@@ -1,4 +1,3 @@
-<p>{{pageTitle}} works!</p>
 <header>
     <menu></menu>
 </header>
@@ -9,8 +8,7 @@
       <ng-container *ngIf="products">
         <form>
           <div class="form-group">
-            <label for="photoPath">Photo Path</label>
-            <input type="text" id="photoPath" class="form-control" [(ngModel)]="products.photoPath" name="photoPath" disabled>
+            <img src="{{ products.photoPath }}" alt="Product photo">
           </div>
           <div class="form-group">
               <label for="partNbr">Part Number</label>

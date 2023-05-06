@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "src/app/services/user.service";
 import { User } from "src/model/user.class";
+import { Location } from "@angular/common";
 
 @Component({
     selector: 'user-create',
@@ -8,19 +9,19 @@ import { User } from "src/model/user.class";
     styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent implements OnInit {
-    pageTitle: string = "User Create"
-    users!: User; 
+    pageTitle: string = "User Create";
+    user: User = new User(); 
 
-    constructor (private userService: UserService) {}
+    constructor (private userService: UserService, 
+        private location: Location) {}
 
     ngOnInit() { }
 
-    saveUser() {
-        this.userService.save(this.users).subscribe(
-            jsonResponse => {
-                this.users = jsonResponse as User;
-            }
-        );
-    }
+    createUser() {
+        this.userService.save(this.user).subscribe(jsonResponse => {
+            this.user = jsonResponse as User;
+            this.location.back();
+        });
+    } 
 
 }

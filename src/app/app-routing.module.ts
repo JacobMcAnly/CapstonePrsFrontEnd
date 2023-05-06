@@ -29,6 +29,7 @@ import { LineItemListComponent } from './line-items/line-item-list/line-item-lis
 
 // routes to the pages
 const routes: Routes = [
+  {path: "user/login", component: UserLoginComponent},
   {path: " ", component: HomeComponent},
   {path: "product/create", component: ProductCreateComponent},
   {path: "product/detail/:id", component: ProductDetailComponent},
@@ -44,7 +45,7 @@ const routes: Routes = [
   {path: "user/detail/:id", component: UserDetailComponent},
   {path: "user/edit/:id", component: UserEditComponent},
   {path: "user/list", component: UserListComponent},
-  {path: "user/login", component: UserLoginComponent},
+  // {path: "user/login", component: UserLoginComponent},
   {path: "vendor/create", component: VendorCreateComponent},
   {path: "vendor/detail/:id", component: VendorDetailComponent},
   {path: "vendor/edit/:id", component: VendorEditComponent},

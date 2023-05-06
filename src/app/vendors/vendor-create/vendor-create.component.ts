@@ -1,6 +1,7 @@
 import { Component,OnInit } from "@angular/core";
 import { Vendor } from "src/model/vendor.class";
 import { VendorService } from "src/app/services/vendor.service";
+import { Location } from "@angular/common";
 
 @Component({
     selector: 'vendor-create',
@@ -9,18 +10,18 @@ import { VendorService } from "src/app/services/vendor.service";
 })
 export class VendorCreateComponent implements OnInit{
     pageTitle: string = "Vendor Create"
-    vendors!: Vendor;
+    vendor: Vendor = new Vendor;
 
-    constructor (private vendorService: VendorService) {}
+    constructor (private vendorService: VendorService,
+        private location: Location) {}
 
     ngOnInit() { }
 
-    saveVendor() {
-        this.vendorService.save(this.vendors).subscribe(
-            jsonResponse => {
-                this.vendors = jsonResponse as Vendor;
-            }
-        );
-    }
+    createVendor() {
+        this.vendorService.save(this.vendor).subscribe(jsonResponse => {
+            this.vendor = jsonResponse as Vendor;
+            this.location.back();
+        });
+    } 
 
 }

@@ -13,15 +13,15 @@ export class Vendor {
 
     // Define a constructor function that takes eight parameters
     constructor(
-        id: number, 
-        code: string, 
-        name: string, 
-        address: string,
-        city: string, 
-        state: string, 
-        zip: string,
-        phone: string | null, 
-        email: string | null 
+        id: number = 0, 
+        code: string = "", 
+        name: string = "", 
+        address: string = "",
+        city: string = "", 
+        state: string = "", 
+        zip: string = "",
+        phone: string | null = null, 
+        email: string | null = null
     ) {
         // Initialize class properties with the constructor parameters
         this.id = id;

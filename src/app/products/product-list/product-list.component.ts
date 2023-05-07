@@ -5,7 +5,9 @@ import { ProductService } from "src/app/services/product.service";
 //export to make the class available to other parts of the application
 @Component({
     selector: 'products-list', 
-    templateUrl: './product-list.component.html'
+    templateUrl: './product-list.component.html',
+    styleUrls: ['./product-list.component.css']
+
 })
 export class ProductListComponent implements OnInit{
     

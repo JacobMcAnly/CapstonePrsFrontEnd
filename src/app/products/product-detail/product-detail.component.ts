@@ -11,7 +11,7 @@ import { ActivatedRoute } from "@angular/router";
 export class ProductDetailComponent {
     pageTitle: string = "Product Detail"
     products!: Product;
-    id!: number;
+    id: number = 0;
 
     constructor (
         private productService: ProductService,

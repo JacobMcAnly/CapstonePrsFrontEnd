@@ -1,4 +1,3 @@
-<p>{{pageTitle}} works!</p>
 <header>
     <menu></menu>
 </header>
@@ -45,7 +44,8 @@
     </div>
 
     <button routerLink="/user/edit/{{ users.id }}">Edit</button>
-    <button>Delete</button>
+    <button (click)="userDelete()">Delete</button>
+    <div *ngIf="deleted">deleted</div>
 </body>
 
 <footer></footer>

@@ -1,46 +1,61 @@
-<p>{{pageTitle}} works!</p>
 <header>
     <menu></menu>
 </header>
 
 <div>
     <h2>New Vendor</h2>
-    <form>
-        <div class="form-group">
-          <label for="code">Code</label>
-          <input type="text" id="code">
-        </div>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="Name">
-        </div>
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" id="address">
-        </div>
-        <div class="form-group">
-          <label for="city">City</label>
-          <input type="text" id="city">
-        </div>
-        <div class="form-group">
-          <label for="state">State</label>
-          <input type="text" id="state">
-        </div>
-         <div class="form-group">
-          <label for="zip">Zip</label>
-          <input type="text" id="zip">
-        </div>
-         <div class="form-group">
-          <label for="phoneNumber">Phone Number</label>
-          <input type="text" id="phoneNumber">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email">
-        </div>
-    </form>
+    <table class="table table-sm">
+      <tr>
+          <td>Code:</td>
+          <td>
+              <input [(ngModel)]="vendor.code" class="rounded" type="text">
+          </td>
+      </tr>
+      <tr>
+          <td>Name:</td>
+          <td>
+              <input [(ngModel)]="vendor.name" class="rounded" type="text">
+          </td>
+      </tr>
+      <tr>
+          <td>Address:</td>
+          <td>
+              <input [(ngModel)]="vendor.address" class="rounded" type="text">
+          </td>
+      </tr>
+      <tr>
+          <td>City:</td>
+          <td>
+              <input [(ngModel)]="vendor.city" class="rounded" type="text">
+          </td>
+      </tr>
+      <tr>
+          <td>State:</td>
+          <td>
+              <input [(ngModel)]="vendor.state" class="rounded" type="text" maxlength="2">
+          </td>
+      </tr>
+      <tr>
+          <td>Zip:</td>
+          <td>
+              <input [(ngModel)]="vendor.zip" class="rounded" type="text">
+          </td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td>
+            <input [(ngModel)]="vendor.phone" class="rounded" type="text">
+        </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+          <input [(ngModel)]="vendor.email" class="rounded" type="text">
+      </td>
+  </tr>
+  </table>
 </div>
 
-<button>Save</button>
+<button (click)="createVendor()">Save</button>
 
 <footer></footer>

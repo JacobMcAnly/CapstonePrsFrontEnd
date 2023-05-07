@@ -30,6 +30,7 @@ import { LineItemListComponent } from './line-items/line-item-list/line-item-lis
 // routes to the pages
 const routes: Routes = [
   {path: " ", component: HomeComponent},
+  {path: '', redirectTo: '/user/login', pathMatch: 'full'},
   {path: "product/create", component: ProductCreateComponent},
   {path: "product/detail/:id", component: ProductDetailComponent},
   {path: "product/edit/:id", component: ProductEditComponent},

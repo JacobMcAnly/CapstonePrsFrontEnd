@@ -9,9 +9,10 @@ import { ActivatedRoute } from "@angular/router";
     styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit{
-    pageTitle: string = "User Detail"
+    pageTitle: string = "User Detail";
     users!: User;
     id: number = 0;
+    deleted: boolean = false; // new flag to indicate if a user has been deleted
 
     constructor (
         private userService: UserService,
@@ -20,18 +21,18 @@ export class UserDetailComponent implements OnInit{
     ngOnInit() {
         this.route.params.subscribe(parms => this.id = parms['id']);
         this.userService.get(this.id).subscribe( 
-            jsonResponse => { this.users = jsonResponse as User;
-            }
+            jsonResponse => { this.users = jsonResponse as User; }
         );
     }
 
-    //delete user by Id
+    // delete user by Id
     userDelete() {
         this.userService.delete(this.id).subscribe(
-            jsonResponse => { 
-                this.users = jsonResponse as User;
-            }
-        )
+            () => {
+              this.users  // clear the user data
+              this.deleted = true; // set the flag to display "deleted" message
+            },
+            error => console.log(error) // handle errors if necessary
+        );
     }
-
 }

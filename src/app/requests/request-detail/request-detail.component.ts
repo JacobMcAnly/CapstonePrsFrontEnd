@@ -8,7 +8,7 @@ import { ActivatedRoute } from "@angular/router";
 @Component({
     selector: 'request-detail',
     templateUrl: './request-detail.component.html',
-    styleUrls: ['./request-detail.component.html']
+    styleUrls: ['./request-detail.component.css']
 })
 export class RequestDetailComponent implements OnInit{
     pageTitle: string = "Request Detail"

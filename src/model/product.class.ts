@@ -14,13 +14,13 @@ export class Product {
 
     // Define a constructor function that takes eight parameters
     constructor(
-        id: number, 
-        partNbr: string, 
-        name: string, 
-        price: number, 
-        unit: string,
-        photoPath: string | null, 
-        vendorId: number, 
+        id: number = 0, 
+        partNbr: string = '', 
+        name: string = '', 
+        price: number = 0, 
+        unit: string = '',
+        photoPath: string | null = null, 
+        vendorId: number = 0, 
         vendor: Vendor 
     ) {
         // Initialize class properties with the constructor parameters

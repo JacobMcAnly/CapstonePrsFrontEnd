@@ -3,11 +3,11 @@
 </header>
 
 <body>
+    
     <div class="card">
         <div class="card-body">     
                                 <!-- one way binding-->
             <h5 class="card-title">{{ pageTitle }}</h5>
-            <button routerLink="/product/create">Create</button>
             <table class="table">
                 <thead>
                     <tr>
@@ -22,7 +22,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- define a local variable named product that represents each individual product in the products array during the iteration.-->
                     <tr *ngFor="let product of products">
                         <td scope="row">{{ product.partNbr }}</td>
                         <td scope="row">{{ product.name }}</td>
@@ -47,6 +46,8 @@
             </table>
         </div>
     </div>
+    <br>
+    <button routerLink="/product/create">Create</button>
 </body>
 
 <footer></footer>

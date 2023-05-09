@@ -5,7 +5,7 @@
 
 header {
     background: rgba(255, 255, 255, 0.5);
-    padding: 15px;
+    padding: 5px;
 }
 
 .table {
@@ -37,4 +37,22 @@ header {
     width: 16px;
     height: 16px;
     margin-right: 0.5rem;
+  }
+
+  button {
+    background-color: orange;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  .delete {
+    background-color: red;
+  }
+
+  .save {
+    background-color: green;
   }

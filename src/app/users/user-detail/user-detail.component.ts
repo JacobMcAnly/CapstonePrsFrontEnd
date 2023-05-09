@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { User } from "src/model/user.class";
 import { UserService } from "src/app/services/user.service";
 import { ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
     selector: 'user-detail',
@@ -16,7 +17,8 @@ export class UserDetailComponent implements OnInit{
 
     constructor (
         private userService: UserService,
-        private route: ActivatedRoute) {}
+        private route: ActivatedRoute,
+        private location: Location) {}
         
     ngOnInit() {
         this.route.params.subscribe(parms => this.id = parms['id']);
@@ -31,6 +33,7 @@ export class UserDetailComponent implements OnInit{
             () => {
               this.users  // clear the user data
               this.deleted = true; // set the flag to display "deleted" message
+              this.location.back();
             },
             error => console.log(error) // handle errors if necessary
         );

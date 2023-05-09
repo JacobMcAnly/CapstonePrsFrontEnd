@@ -22,6 +22,6 @@ export class UserCreateComponent implements OnInit {
             this.user = jsonResponse as User;
             this.location.back();
         });
-    } 
-
+    }
+    
 }

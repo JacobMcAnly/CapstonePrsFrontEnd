@@ -21,7 +21,7 @@ export class Product {
         unit: string = '',
         photoPath: string | null = null, 
         vendorId: number = 0, 
-        vendor: Vendor 
+        vendor: Vendor
     ) {
         // Initialize class properties with the constructor parameters
         this.id = id;

@@ -45,7 +45,8 @@
     </div>
     
     <button routerLink="/vendor/edit/{{ vendors.id }}">Edit</button>
-    <button (click)="vendorDelete()">Delete</button>
+    <br>
+    <button class="delete" (click)="vendorDelete()">Delete</button>
     <div *ngIf="deleted">deleted</div>
   </body>
 
